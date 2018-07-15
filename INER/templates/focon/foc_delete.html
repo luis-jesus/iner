@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block head_title %}Eliminar Contrato{% endblock %}
+{% block content %}
+{% load bootstrap3 %}
+{% load static %}
+      <form method="post">
+        {% csrf_token %}
+        <h1>¿Estás seguro que deseas borrar el Focon " {{ object }}"?</h1>
+        <button class="btn btn-success my-2 my-sm-0 fa fa-trash-o" type="submit"> Borrar</button>
+      </form>
+      <p>
+        {% buttons %}
+        <a href="{% url "focon:list" %}"><button class="btn btn-danger my-2 my-sm-0 fa fa-arrow-left" type="submit"> Regresar</button></a></p>
+        {% endbuttons %}
+      </p>
+{% endblock %}

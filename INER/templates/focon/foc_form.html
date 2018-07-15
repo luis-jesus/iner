@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block head_title %}Lista de Focones{% endblock %}
+{% block content %}
+{% load bootstrap3 %}
+{% load static %}
+<h1 align="center">Nuevo Focon</h1>
+<form method="post">
+	{% csrf_token %}
+	{% bootstrap_form form %}
+	<button class="btn btn-success my-2 my-sm-0 fa fa-floppy-o" type="submit"> Guardar</button>
+</form>
+<p>
+{% buttons %}
+	<a href="{% url "focon:list"  %}"><button class="btn btn-danger my-2 my-sm-0 fa fa-arrow-left" type="submit"> Regresar</button></a>
+{% endbuttons %}
+</p>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block head_title %}Detalle Contrat{% endblock %}
+{% block content %}
+{% load bootstrap3 %}
+{% load static %}
+<h1>Detalle Pago</h1>
+<h2>Partida: {{ pago.partida }}</h2>
+<h3>No de Contrato: {{ pago.no_contrato }}</h3>
+<h3>Objeto de Contrato: {{ pago.obje_contrato }}</h3>
+<h3>{{pago.prov_adju}}</h3>
+
+{% buttons %}
+<a href="{% url "pago:list" %}"><button class="btn btn-danger my-2 my-sm-0 fa fa-arrow-left" type="submit"> Regresar</button></a>
+{% endbuttons %}
+{% endblock %}

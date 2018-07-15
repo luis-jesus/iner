@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block head_title %}Contabilidad{% endblock %}
+{% block content %}
+{% load bootstrap3 %}
+{% load static %}
+<center><h1>FO-CON</h1></center>
+<div class="row">
+  {% if request.user.is_superuser %}
+  <a href="{% url "focon:new" %}"><button class="btn btn-primary my-2 my-sm-0 fa fa-plus fa-1x" type="submit"> Agregar</button></a></td>
+  <p><a href="{% url 'focon:reporte_personas_pdf' %}"><button class="btn btn-success my-2 my-sm-0 fa fa-file-pdf-o fa-1x" type="submit"> Reporte</button></a></p>
+
+  {% endif %}
+  <table class="table table-hover order-table table table-bordered" style="text-align:center;">
+    <thead>
+      <tr class="encabezados">
+        <th><h6>No de Focon</h6></th>
+        <th><h6>No de Oficio</h6></th>
+        <th><h6>Area Requirente</h6></th>
+        <th><h6>Descripción</h6></th>
+        <th><h6>Partida</h6></th>
+        <th><h6>Descripcion de Servicio</h4></th>
+        <th><h6>Monto C/IVA</h6></th>
+        <th><h6>Fecha de Solicitud</h6></th>
+        <th><h6>Fecha de Envio</h6></th>
+        <th><h6>Entrega Requirente</h6></th>
+        <th><h6>Status</h6></th>
+        <th><h6>Autorización Babel</h6></th>
+        {% if request.user.is_superuser %}
+        <th><h6>Acciones</h6></th>
+        {% endif %}
+      </tr>
+    </thead>
+
+    {% for foc in object_list %}
+    <tr>
+      <td>{{ foc.no_focon }}</td>
+      <td>{{ foc.no_oficio }}</td>
+      <td>{{ foc.area_requirente }}</td>
+      <td>{{ foc.descripcion }}</td>
+      <td>{{ foc.partida }}</td>
+      <td>{{ foc.descripcion_servicio }}</td>
+      <td>{{ foc.monto_civa }}</td>
+      <td>{{ foc.fecha_solicitud }}</td>
+      <td>{{ foc.fecha_envio }}</td>
+      <td>{{ foc.entrega_requirente }}</td>
+      <td>{{ foc.status }}</td>
+      <td>{{ foc.autorizacion_babel }}</td>
+      {% if request.user.is_superuser %}
+      <td>
+        <a href="{% url "focon:edit" foc.id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a>
+        <br>
+        <a href="{% url "focon:delete" foc.id %}"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></a>
+      </td>
+      {% endif %}
+    </tr>
+    {% endfor %}
+  </table>
+  {% endblock %}
+
+
+</div>

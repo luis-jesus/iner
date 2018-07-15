@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block head_title %}Lista de Focones{% endblock %}
+{% block content %}
+{% load bootstrap3 %}
+{% load static %}
+<h1 align="center">Nuevo FO-CON-03</h1>
+<form method="post">
+	<!-- {% csrf_token %}
+	{% if request.user.is_superuser %}
+	<div class="form-group"><label class="control-label" for="id_no_requisicion">No de Requisicion</label><input class="form-control" id="id_no_requisicion" maxlength="400" name="no_requisicion" placeholder="No de Requisicion" title="" type="text" /></div>
+	{% endif %} -->
+	{% bootstrap_form form %}
+
+	<button class="btn btn-success my-2 my-sm-0 fa fa-floppy-o" type="submit"> Guardar</button>
+</form>
+<p>
+{% buttons %}
+	<a href="{% url "focon:f03list"  %}"><button class="btn btn-danger my-2 my-sm-0 fa fa-arrow-left" type="submit"> Regresar</button></a>
+{% endbuttons %}
+</p>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block head_title %}Contabilidad{% endblock %}
+{% block content %}
+{% load bootstrap3 %}
+{% load static %}
+<center><h1>Pagos</h1></center>
+<div class="row" >
+  {% if request.user.is_superuser %}
+    <a href="{% url "pago:new" %}"><button class="btn btn-primary my-2 my-sm-0 fa fa-plus fa-1x" type="submit"> Agregar</button></a>
+    <p><a href="{% url 'pago:reporte_personas_pdf' %}"><button class="btn btn-success my-2 my-sm-0 fa fa-file-pdf-o fa-1x" type="submit"> Reporte</button></a>
+    </p>
+    {% endif %}
+    <table class="table table-hover order-table table table-bordered" style="text-align:center;">
+      <thead>
+        <tr class="encabezados">
+          <th><h6>Partida</h6></th>
+          <th><h6>Art.Ley LAASSP</h6></th>
+          <th><h6>No de contrato</h6></th>
+          <th><h6>Provedor Adjudicado</h6></th>
+          <th><h6>Fecha de Inicio</h6></th>
+          <th><h6>Fecha de Termino</h6></th>
+          <th><h6>Objeto del Contrato</h6></th>
+          <th><h6>Firma del Contrato</h6></th>
+          <th><h6>Monto del Contrato</h6></th>
+          <!-- <th><h6>Convenios</h6></th>
+          <th><h6>Deductivas</h6></th>
+          <th><h6>Disminuciones de Contrato</h6></th> -->
+          <th><h6>Total Contrato</h6></th>
+          <th><h6>Area Responsable</h6></th>
+          <th><h6>Forma de Pago</h6></th>
+          {% if request.user.is_superuser %}
+          <th><h6>Acciones</h6></th>
+          {% endif %}
+        </tr>
+      </thead>
+      {% for pag in object_list %}
+      <tr>
+        <td>{{ pag.partida }}</td>
+        <td>{{ pag.art_laassp }}</td>
+        <td>{{ pag.no_contrato }}</td>
+        <td>{{ pag.prov_adju }}</td>
+        <td>{{ pag.fecha_inicio }}</td>
+        <td>{{ pag.fecha_termino }}</td>
+        <td>{{ pag.obje_contrato }}</td>
+        <td>{{ pag.fir_contrato }}</td>
+        <td>{{ pag.monto_contraiva }}</td>
+        <!-- <td>{{ pag.convenios }}</td>
+        <td>{{ pag.deductivas }}</td>
+        <td>{{ pag.dis_contrato }}</td> -->
+        <td>{{ pag.total_contrato }}</td>
+        <td>{{ pag.area_respon }}</td>
+        <td>{{ pag.for_pago }}</td>
+        {% if request.user.is_superuser %}
+        <td>
+          <a href="{% url "pago:detail" pag.id %}"><i class="fa fa-eye fa-2x" aria-hidden="true"></i></a>
+          <br>
+          <a href="{% url "pago:edit" pag.id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a>
+          <br>
+          <a href="{% url "pago:delete" pag.id %}"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></a>
+        </td>
+        {% endif %}
+      </tr>
+      {% endfor %}
+    </table>
+    {% endblock %}
+
+  </div>
+</div>

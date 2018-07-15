@@ -1,0 +1,421 @@
+{% block content %}
+{% block head_title %}
+<center><h3>INSTITUTO NACIONAL DE ENFERMEDADES RESPIRATORIAS "ISMAEL COSIO VILLEGAS"</h3></center>
+<p></p>
+<center><h4>DIRECCION DE ADMINISTRACIÓN</h4></center>
+<center><h4>SUBDIRECCIÓN DE RECURSOS MATERIALES Y SERVICIOS GENERALES</h4></center>
+<p></p>
+<center><h4>REQUISICIÓN DE BIENES Y/O SERVICIOS</h4></center>
+{% endblock %}
+{% load bootstrap3 %}
+{% load static %}
+<button  type="button" value="Imprimir" onclick="imprimir()" name="button"  class="oculto">Imprimir</button>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+	body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Calibri"; font-size:x-small }
+	a.comment-indicator:hover + comment { background:#ffd; position:absolute; display:block; border:1px solid black; padding:0.5em;  }
+	a.comment-indicator { background:red; display:inline-block; border:1px solid black; width:0.5em; height:0.5em;  }
+	comment { display:none;  }
+
+</style>
+<style type="text/css" media="print">
+.oculto {display:none}
+</style>
+
+<center><table cellspacing="0" border="0">
+	<colgroup width="62"></colgroup>
+	<colgroup width="36"></colgroup>
+	<colgroup width="13"></colgroup>
+	<colgroup width="24"></colgroup>
+	<colgroup width="222"></colgroup>
+	<colgroup width="9"></colgroup>
+	<colgroup width="32"></colgroup>
+	<colgroup width="56"></colgroup>
+	<colgroup width="143"></colgroup>
+	<colgroup width="9"></colgroup>
+	<colgroup width="49"></colgroup>
+	<colgroup width="57"></colgroup>
+	<colgroup width="73"></colgroup>
+	<colgroup width="48"></colgroup>
+	<colgroup width="86"></colgroup>
+	<tr>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" colspan=9 height="20" align="left" valign=middle><font face="Arial" size=1 color="#000000">Nombre de la dependencia o entidad: {{focon03.dependencia}}</font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" colspan=5 align="left" valign=middle><font face="Arial" size=1 color="#000000">Área requirente:  {{focon03.area_requirente}}</font></td>
+		</tr>
+	<tr>
+		<td height="7" align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" colspan=5 height="20" align="left" valign=middle><font face="Arial" size=1 color="#000000">Fecha de elaboración:  {{focon03.fecha_elaboracion}}</font></td>
+		<td align="left" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c" align="left" valign=middle><font face="Arial" size=1 color="#000000">No. de requisición:  </font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c" align="left" valign=middle><font face="Arial" size=1 color="#000000"><br>{{focon03.no_requisicion}}</font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-right: 1px solid #5c616c" align="left" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="left" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="left" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="left" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" colspan=2 align="left" valign=middle><font face="Arial" size=1 color="#000000">Fecha requerida: </font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-right: 1px solid #5c616c" align="left" valign=middle><font face="Arial" size=1 color="#000000"><br>{{focon03.fecha_requerida}}</font></td>
+	</tr>
+	<tr>
+		<td height="7" align="center" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" colspan=15 height="20" align="left" valign=middle><font face="Arial" size=1 color="#000000">Lugar de entrega:   {{focon03.lugar_entrega}}</font></td>
+		</tr>
+	<tr>
+		<td height="7" align="center" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c" height="39" align="center" valign=middle><font face="Arial" size=1 color="#000000">No. de partida<br></font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" colspan=3 align="center" valign=middle><font face="Arial" size=1 color="#000000">CUCOP <br></font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" colspan=7 align="center" valign=middle><font face="Arial" size=1 color="#000000">Descripción <br></font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" align="center" valign=middle><font face="Arial" size=1 color="#000000">Cantidad solicitada</font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" align="center" valign=middle><font face="Arial" size=1 color="#000000">Unidad de medida <br></font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" align="center" valign=middle><font face="Arial" size=1 color="#000000">Precio unitario</font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" align="center" valign=middle><font face="Arial" size=1 color="#000000">Importe <br></font></td>
+	</tr>
+
+	<tr>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" height="20" align="center" bgcolor="#FFFFFF"><font face="Arial" size=1 color="#000000"><br>{{focon03.partida}}</font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" colspan=3 align="center" bgcolor="#FFFFFF"><font face="Arial" size=1 color="#000000"><br>{{focon03.clave_cucop}}</font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" colspan=7 align="center" valign=middle bgcolor="#FFFFFF"><font face="Arial" size=1 color="#000000"><br>{{focon03.descripcion}} -- {{focon03.descripcion_detallada}}</font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" align="center" valign=top bgcolor="#FFFFFF"><font face="Arial" size=1 color="#000000"><br>{{focon03.cantidad_solicitada}}</font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" align="center" valign=top bgcolor="#FFFFFF"><font face="Arial" size=1 color="#000000"><br>{{focon03.unidad_medida}}</font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" align="center" valign=top bgcolor="#FFFFFF"><font face="Arial" size=1 color="#000000"><br>${{focon03.precio_unitario}}</font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" align="center" valign=top bgcolor="#FFFFFF"><font face="Arial" size=1 color="#000000"><br>$ {{focon03.importe}}</font></td>
+	</tr>
+
+	<tr>
+		<td height="21" align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" colspan=2 align="right" valign=middle><font face="Arial" size=1 color="#000000">Subtotal: </font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" align="center" valign=top><font face="Arial" size=1 color="#000000">$ {{focon03.subtotal}}<br></font></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c" height="20" align="left" valign=middle><font face="Arial" size=1 color="#000000">Anexos: </font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-right: 1px solid #5c616c" align="center" valign=middle><font face="Arial" size=1 color="#000000">{{focon03.anexos}}<br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td colspan=5 align="left" valign=middle sdnum="1033;0;DD/MMM"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" colspan=2 align="right" valign=middle><font face="Arial" size=1 color="#000000">I.V.A.: </font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" align="center" valign=top><font face="Arial" size=1 color="#000000">$ {{focon03.iva}}<br></font></td>
+	</tr>
+	<tr>
+		<td height="3" align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c" height="20" align="left" valign=middle><font face="Arial" size=1 color="#000000">Anticipo: </font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-right: 1px solid #5c616c" align="center" valign=middle><font face="Arial" size=1 color="#000000">{{focon03.anticipo}}<br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c" align="center" valign=middle><font face="Arial" size=1 color="#000000">Autorización del presupuesto: </font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c" align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-right: 1px solid #5c616c" align="center" valign=middle><font face="Arial" size=1 color="#000000">{{focon03.autorizacion_presupuesto}}<br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c" align="center" valign=middle><font face="Arial" size=1 color="#000000">Existencia en almacen: </font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c" align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-right: 1px solid #5c616c" align="center" valign=middle><font face="Arial" size=1 color="#000000">{{focon03.existencia_almacen}}<br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" colspan=2 align="right" valign=middle><font face="Arial" size=1 color="#000000">Otros gravámenes: </font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" align="center" valign=middle><font face="Arial" size=1 color="#000000">$ {{focon03.otros_gravamenes}}<br></font></td>
+	</tr>
+	<tr>
+		<td height="7" align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" colspan=11 rowspan=2 height="35" align="left" valign=top><font face="Arial" size=1 color="#000000">Observaciones: {{focon03.observaciones}}</font></td>
+		<td align="left" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c" colspan=2 align="right" valign=middle><font face="Arial" size=1 color="#000000">Total: </font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" align="right" valign=middle><font face="Arial" size=1 color="#000000">$ {{focon03.total}}<br></font></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="7" align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c" colspan=3 height="20" align="center" valign=middle><font face="Arial" size=1 color="#000000">Registro sanitario: </font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-right: 1px solid #5c616c" align="center" valign=middle><font face="Arial" size=1 color="#000000">{{focon03.registro_sanitario}}<br></font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c" align="center" valign=middle><font face="Arial" size=1 color="#000000">Normas / niveles de inspección: </font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c" align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-right: 1px solid #5c616c" align="center" valign=middle><font face="Arial" size=1 color="#000000">{{focon03.normas}}<br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c" align="center" valign=middle><font face="Arial" size=1 color="#000000">Capacitación: </font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c" align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-right: 1px solid #5c616c" align="center" valign=middle><font face="Arial" size=1 color="#000000">{{focon03.capacitacion}}<br></font></td>
+		<td align="center" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c" colspan=2 align="center" valign=middle><font face="Arial" size=1 color="#000000">Pais de origen: </font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-right: 1px solid #5c616c" align="center" valign=middle><font face="Arial" size=1 color="#000000">{{focon03.pais_origen}}<br></font></td>
+	</tr>
+	<tr>
+		<td height="7" align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" colspan=7 height="20" align="left" valign=middle><font face="Arial" size=1 color="#000000">Métodos de prueba:{{focon03.metodo_prueba}}</font></td>
+		<td align="left"><font color="#000000"><br></font></td>
+		<td align="left"><font color="#000000"><br></font></td>
+		<td align="left"><font color="#000000"><br></font></td>
+		<td align="left"><font color="#000000"><br></font></td>
+		<td align="left"><font color="#000000"><br></font></td>
+		<td align="left"><font color="#000000"><br></font></td>
+		<td align="left"><font color="#000000"><br></font></td>
+		<td align="left"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="7" align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c" colspan=3 height="28" align="left"><font face="Arial" size=1 color="#000000">Tipo de garantía: </font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" colspan=2 align="center"><font face="Arial" size=1 color="#000000">{{focon03.tipo_garantia1}}</font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" colspan=2 align="left"><font face="Arial" size=1 color="#000000">Porcentaje:  {{focon03.porcentaje1}} %</font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c" colspan=2 align="left"><font face="Arial" size=1 color="#000000">Plurianualidad: </font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-right: 1px solid #5c616c" align="center"><font face="Arial" size=1 color="#000000">{{focon03.plurianualidad}}<br></font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" colspan=2 align="left"><font face="Arial" size=1 color="#000000">Meses {{focon03.meses}}</font></td>
+		</tr>
+	<tr>
+		<td height="7" align="left"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="left"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="left"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c" colspan=3 height="20" align="left"><font face="Arial" size=1 color="#000000">Tipo de garantía: </font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-right: 1px solid #5c616c" colspan=2 align="center"><font face="Arial" size=1 color="#000000">{{focon03.tipo_garantia2}}</font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" colspan=2 align="left"><font face="Arial" size=1 color="#000000">Porcentaje: {{focon03.porcentaje2}} %</font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" colspan=3 align="left"><font face="Arial" size=1 color="#000000">Penas convencionales:</font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" align="center"><font face="Arial" size=1 color="#000000">{{focon03.penas_convencionales}}<br></font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" align="center"><font face="Arial" size=1 color="#000000">Porcentaje: {{focon03.porcentaje_penas}} %</font></td>
+	</tr>
+	<tr>
+		<td height="7" align="left"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="left"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="left"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c" colspan=3 height="20" align="left"><font face="Arial" size=1 color="#000000">Tipo de garantía: </font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-right: 1px solid #5c616c" colspan=2 align="center"><font face="Arial" size=1 color="#000000">{{focon03.tipo_garantia3}}</font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" colspan=2 align="left"><font face="Arial" size=1 color="#000000">Porcentaje: {{focon03.porcentaje3}} %</font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" colspan=3 align="left" valign=middle><font face="Arial" size=1 color="#000000">Tiempo de fabricación: {{focon03.tiempo_fabricacion}}</font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="7" align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" colspan=5 height="20" align="left" valign=middle><font face="Arial" size=1 color="#000000">Condiciones de entrega:  {{focon03.condiciones_entrega}}</font></td>
+		<td align="left" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td colspan=8 align="left" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		</tr>
+	<tr>
+		<td height="7" align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" colspan=5 height="20" align="left" valign=middle><font face="Arial" size=1 color="#000000">Solicita: {{focon03.solicita}}</font></td>
+		<td align="left" valign=middle><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td align="center"><font face="Arial" size=1 color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #5c616c; border-bottom: 1px solid #5c616c; border-left: 1px solid #5c616c; border-right: 1px solid #5c616c" colspan=8 align="left" valign=middle><font face="Arial" size=1 color="#000000">Autoriza  {{focon03.autoriza}}</font></td>
+		</tr>
+
+</table></center>
+
+
+<script type="text/javascript">
+function imprimir(){
+	window.print();
+}
+</script>
+
+  {% endblock %}

@@ -1,0 +1,41 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="">Sistema D.M.C.C</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            {% if request.user.is_authenticated  %}
+            {% else %}
+            <li class="active"><a class="fa fa-home" href="{% url 'auth_login' %}"> Home</a></li>
+            {% endif %}
+            {% if request.user.is_superuser %}
+            <li><a class="fa fa-newspaper-o" href="{% url "conta:list" %}"> CUCOP</a></li>
+            {% endif %}
+            {% if request.user.is_authenticated  %}
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle 	fa fa-cubes" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> FO-CON's <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="{% url "focon:list" %}">FO-CON</a></li>
+                <li><a href="{% url "focon:f03list" %}">FO-CON03</a></li>
+              </ul>
+            </li>
+            <li><a class="fa fa-pencil" href="{% url "concurso:list" %}"> Concursos</a></li>
+            <li><a class="fa fa-dollar" href="{% url "pago:list" %}"> Pago</a></li>
+            {% endif %}
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+              {% if request.user.is_authenticated %}
+            <li><input style="color:black;" type="search" class="light-table-filter form-control mr-sm-2 busqueda" data-table="table-hover" placeholder="Búsqueda"></li>
+            <li class="active"><a class="fa fa-sign-out" href="{% url 'auth_logout' %}"> Cerrar Sesión <span class="sr-only">(current)</span></a></li>
+              {% endif %}
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>

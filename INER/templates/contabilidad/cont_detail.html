@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block head_title %}Detalle Contrat{% endblock %}
+{% block content %}
+{% load bootstrap3 %}
+{% load static %}
+<h1>Detalle CUCOP</h1>
+<h2>Clave CUCOP: {{ contabilidad.clave_cucop }}</h2>
+<h3>Partida Especifica: {{ contabilidad.partida }}</h3>
+<h3>Descripcion: {{contabilidad.descripcion}}</h3>
+<h3>Unidad de Medida: {{contabilidad.unidad_medida}}</h3>
+{% buttons %}
+<a href="{% url "conta:list" %}"><button class="btn btn-danger my-2 my-sm-0 fa fa-arrow-left" type="submit"> Regresar</button></a>
+{% endbuttons %}
+{% endblock %}

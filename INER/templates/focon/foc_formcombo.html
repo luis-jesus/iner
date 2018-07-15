@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block head_title %}Lista de Focones{% endblock %}
+{% block content %}
+{% load bootstrap3 %}
+{% load static %}
+<select>
+  <option>Elige</option>
+  {% for contabilidad in cucop %}
+    <option value="{{contabilidad.id}}">{{contabilidad.partida}}</option>
+  {% endfor %}
+</select>
+<select>
+  <option>Elige</option>
+  {% for contabilidad in cucop %}
+    <option value="{{contabilidad.id}}">{{contabilidad.descripcion}}</option>
+  {% endfor %}
+</select>
+{% endblock %}
+
+<script>
+    $('select').on('change', inicio);
+    function inicio() {
+      var id = $(this).val();
+      $.ajax({
+        data : {'id':id},
+        url : '/focones/ajax',
+        type: 'get',
+        success: function(data){
+          var html = ""
+          for (var i = 0; i < data.length; i++) {
+            html += '<ul><li>'+data[i],fields.partida+'</li><li>'+data[i],fields.descripcion+'</li></ul>'
+            data[i]
+          }
+          $('#datos').html(html);
+
+        }
+      });
+
+    }
+
+</script>

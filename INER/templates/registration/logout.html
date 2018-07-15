@@ -1,0 +1,11 @@
+{% extends "registration/registration_base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Logged out" %}{% endblock %}
+{% load static %}
+{% block content %}
+<center>
+  <h1><p>{% trans "Haz cerrado la Sesión. Oprime Home" %}.</p></h1>
+</center>
+<!-- <a href="{% url "auth_login"  %}"><button class="btn btn-outline-info my-2 my-sm-0" type="submit">¡INICIO!</button></a> -->
+{% endblock %}

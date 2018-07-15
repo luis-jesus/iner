@@ -1,0 +1,35 @@
+.table td{
+  border-top: 2px solid rgb(0, 0, 0);
+  border: 2px solid rgb(0, 0, 0);
+}
+.table thead th{
+  border-top: 2px solid rgb(0, 0, 0);
+  border-bottom: 2px solid rgb(0, 0, 0);
+  border: 2px solid rgb(0, 0, 0);
+
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -45px;
+  margin-left: -55px;
+}
+#table-scroll{
+  width: 500px;
+  height: 100px;
+  overflow: auto;
+}
+#fixedY{
+  position: relative;
+  z-index: 99;
+}
+.encabezados h6{
+  text-align: center;
+}
+.busqueda{
+  margin-top: 8px;
+  margin-right: 50px;
+}
+.espacio{
+  background-color: rgb(255, 255, 255);
+}

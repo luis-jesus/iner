@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block head_title %}Contabilidad{% endblock %}
+{% block content %}
+{% load bootstrap3 %}
+{% load static %}
+<center><h1>Concursos</h1></center>
+<div class="row">
+  {% if request.user.is_superuser %}
+    <a href="{% url "concurso:new" %}"><button class="btn btn-primary my-2 my-sm-0 fa fa-plus fa-1x" type="submit"> Agregar</button></a></td>
+    <p><a href="{% url 'concurso:reporte_personas_pdf' %}"><button class="btn btn-success my-2 my-sm-0 fa fa-file-pdf-o fa-1x" type="submit"> Reporte</button></a>
+    </p>
+    {% endif %}
+  <table class="table table-hover order-table table table-bordered" style="text-align:center;">
+    <thead>
+      <tr class="encabezados">
+        <th><h6>No de Contrato</h6></th>
+        <th><h6>Tipo de Procedimiento</h6></th>
+        <th><h6>Descripcion de Servicio</h6></th>
+        <th><h6>Provedor</h6></th>
+        <th><h6>Area Solicitante</h6></th>
+        <th><h6>Monto de Contrato S/IVA</h6></th>
+        <th><h6>IVA</h6></th>
+        <th><h6>Monto Total</h6></th>
+        <th><h6>Fecha de Inicio</h6></th>
+        <th><h6>Fecha de Termino</h6></th>
+        <!-- <th><h6>Fecha de Contratacion</h6></th>
+        <th><h6>Observaciones</h6></th>
+        <th><h6>Status</h6></th>
+        <th><h6>RFC</h6></th>
+        <th><h6>Representante Legal</h6></th>
+        <th><h6>Tipo de Operacion</h6></th>
+        <th><h6>Esquema de Precios</h6></th>
+        <th><h6>Tipo de Contratacion</h6></th>
+        <th><h6>Plurianual</h6></th>
+        <th><h6>Tipo de Moneda</h6></th>
+        <th><h6>Monto Vigente</h6></th>
+        <th><h6>Monto Total Minimo</h6></th>
+        <th><h6>Monto Total Maximo</h6></th>
+        <th><h6>Convenio Modificatorio</h6></th>
+        <th><h6>No de Convenio</h6></th> -->
+        <th><h6>Fecha de Modificacion de Convenio</h6></th>
+        {% if request.user.is_superuser %}
+        <th><h6>Acciones</h6></th>
+        {% endif %}
+      </tr>
+    </thead>
+    {% for concur in object_list %}
+    <tr>
+      <td>{{ concur.no_contrato }}</td>
+      <td>{{ concur.tipo_procedimiento }}</td>
+      <td>{{ concur.descripcion_servicio }}</td>
+      <td>{{ concur.provedor }}</td>
+      <td>{{ concur.area_solicitante }}</td>
+      <td>{{ concur.monto_contrato_siniva }}</td>
+      <td>{{ concur.iva }}</td>
+      <td>{{ concur.monto_total }}</td>
+      <td>{{ concur.fecha_inicio }}</td>
+      <td>{{ concur.fecha_termino }}</td>
+      <!-- <td>{{ concur.fecha_contratacion }}</td>
+      <td>{{ concur.observaciones }}</td>
+      <td>{{ concur.status }}</td>
+      <td>{{ concur.rfc }}</td>
+      <td>{{ concur.representante_legal }}</td>
+      <td>{{ concur.tipo_operacion }}</td>
+      <td>{{ concur.esquema_precios }}</td>
+      <td>{{ concur.tipo_contratacion }}</td>
+      <td>{{ concur.plurianual }}</td>
+      <td>{{ concur.tipo_moneda }}</td>
+      <td>{{ concur.monto_vigente }}</td>
+      <td>{{ concur.monto_total_minima }}</td>
+      <td>{{ concur.monto_total_maximo }}</td>
+      <td>{{ concur.convenio_modificatorio }}</td>
+      <td>{{ concur.no_convenio }}</td> -->
+      <td>{{ concur.fecha_modificacion_convenio }}</td>
+      {% if request.user.is_superuser %}
+      <td>
+          <a href="{% url "concurso:edit" concur.id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a>
+          <br>
+          <a href="{% url "concurso:delete" concur.id %}"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></a>
+      </td>
+      {% endif %}
+    </tr>
+    {% endfor %}
+  </table>
+
+</div>
+
+
+{% endblock %}
+<!-- Copyright (c) 2017 Copyright Holder All Rights Reserved. -->

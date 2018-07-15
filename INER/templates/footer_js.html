@@ -1,0 +1,43 @@
+{% load static %}
+<footer>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/ie-emulation-modes-warning.js' %}"></script>
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
+  <script src="{% static 'js/search.js' %}"></script>
+  <script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
+
+  <script type="text/javascript">
+  $('#id_clave_cucop').bind('input', function() {
+    cucop = $(this).val()  // get the current value of the input field.
+    document.getElementById("id_partida").value = $("#id_clave_cucop option[value="+cucop+"]").text();
+    var arre_json = {{ foconlist1|safe }}
+    console.log (arre_json)
+    var index;
+    for(index=0; index < arre_json.length; index++){
+      if(cucop == arre_json[index].pk){
+        console.log(arre_json[index])
+        document.getElementById("id_partida").value = arre_json[index].partida;
+        document.getElementById("id_descripcion").value = arre_json[index].descripcion;
+      }
+    }
+  });
+</script>
+
+<script type="text/javascript">
+$('#id_precio_unitario').bind('input', function() {
+  qty = $(this).val() // get the current value of the input field.
+  iva=0.16
+  document.getElementById("id_importe").value = (qty);
+  document.getElementById("id_subtotal").value = (qty);
+  document.getElementById("id_iva").value = (iva*qty).toFixed(2);
+  total = (iva*qty) + parseFloat(qty);
+  document.getElementById("id_total").value = (total).toFixed(2);
+});
+</script>
+</footer>
