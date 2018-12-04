@@ -25,7 +25,7 @@ SECRET_KEY = '&-uii-fcyq!e$dc9@f_fc9%%x_5&^8@ki!5r5e6k(gi_y7y(xq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.dmcc-iner.com']
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'jesus12jimmy13@gmail.com'
