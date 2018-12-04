@@ -165,7 +165,8 @@ def Focon03Creation(request):
         'pk':abc[0],
         'clave_cucop':abc[1],
         'partida':abc[2],
-        'descripcion':abc[3]
+        'descripcion':abc[3],
+        'unidad_medida':abc[4]
         })
     foconlist3 = json.dumps(fo_list2, cls=DjangoJSONEncoder)
     context = {

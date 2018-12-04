@@ -8,8 +8,6 @@ from smart_selects.db_fields import ChainedForeignKey, GroupedForeignKey
 from django.db import models
 from apps.contabilidad.models import Contabilidad
 
-
-
 lugar_choises = (
     ('Instituto Nacional de Enfermedades Respiratorias "Ismael Cosio Villegas"',
     'Instituto Nacional de Enfermedades Respiratorias "Ismael Cosio Villegas"'),

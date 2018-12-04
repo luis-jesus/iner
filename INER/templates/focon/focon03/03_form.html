@@ -3,19 +3,1515 @@
 {% block content %}
 {% load bootstrap3 %}
 {% load static %}
-<h1 align="center">Nuevo FO-CON-03</h1>
+<div class="col-md-12 text-center">
+	<h1>Nuevo FO-CON-03</h1>
+</div>
+<br>
 <form method="post">
-	<!-- {% csrf_token %}
-	{% if request.user.is_superuser %}
-	<div class="form-group"><label class="control-label" for="id_no_requisicion">No de Requisicion</label><input class="form-control" id="id_no_requisicion" maxlength="400" name="no_requisicion" placeholder="No de Requisicion" title="" type="text" /></div>
-	{% endif %} -->
-	{% bootstrap_form form %}
-
+	{% csrf_token %}
+	<!-- {% bootstrap_form form %} -->
+	<div class="col-md-8 text-center">
+		<div class="form-group">
+			<label class="control-label" for="id_dependencia">Dependencia</label>
+			<select class="form-control" id="id_dependencia" name="dependencia" required="required" title="">
+				<option value="" selected="selected">---------</option>
+				<option value="Instituto Nacional de Enfermedades Respiratorias &quot;Ismael Cosio Villegas&quot;">Instituto Nacional de Enfermedades Respiratorias &quot;Ismael Cosio Villegas&quot;</option>
+			</select>
+		</div>
+	</div>
+	<div class="col-md-4 text-center">
+		<div class="form-group">
+			<label class="control-label" for="id_area_requirente">Area Requirente</label>
+			<input class="form-control" id="id_area_requirente" maxlength="400" name="area_requirente" placeholder="Area Requirente" required="required" title="" type="text" />
+		</div>
+	</div>
+	<div class="form-group col-md-4 text-center">
+		<label class="control-label" for="id_fecha_elaboracion_day">Fecha de Elaboracion</label>
+		<div class="row bootstrap3-multi-input">
+			<div class="col-xs-4">
+				<select class="form-control" id="id_fecha_elaboracion_day" name="fecha_elaboracion_day" required="required" title="">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+					<option value="21">21</option>
+					<option value="22">22</option>
+					<option value="23">23</option>
+					<option value="24">24</option>
+					<option value="25">25</option>
+					<option value="26">26</option>
+					<option value="27">27</option>
+					<option value="28">28</option>
+					<option value="29">29</option>
+					<option value="30">30</option>
+					<option value="31">31</option>
+				</select>
+			</div>
+			<div class="col-xs-4">
+				<select class="form-control" id="id_fecha_elaboracion_month" name="fecha_elaboracion_month" required="required" title="">
+					<option value="1">Enero</option>
+					<option value="2">Febrero</option>
+					<option value="3">Marzo</option>
+					<option value="4">Abril</option>
+					<option value="5">Mayo</option>
+					<option value="6">Junio</option>
+					<option value="7">Julio</option>
+					<option value="8">Agosto</option>
+					<option value="9">Septiembre</option>
+					<option value="10">Octubre</option>
+					<option value="11">Noviembre</option>
+					<option value="12">Diciembre</option>
+			</select>
+		</div>
+		<div class="col-xs-4">
+			<select class="form-control" id="id_fecha_elaboracion_year" name="fecha_elaboracion_year" required="required" title="">
+				<option value="2018">2018</option>
+				<option value="2019">2019</option>
+				<option value="2020">2020</option>
+				<option value="2021">2021</option>
+				<option value="2022">2022</option>
+				<option value="2023">2023</option>
+				<option value="2024">2024</option>
+				<option value="2025">2025</option>
+				<option value="2026">2026</option>
+				<option value="2027">2027</option>
+			</select>
+		</div>
+	</div>
+</div>
+{% if user.is_superuser %}
+<div class="col-md-4 text-center">
+	<div class="form-group">
+		<label class="control-label" for="id_no_requisicion">No de Requisicion</label>
+		<input class="form-control" id="id_no_requisicion" maxlength="400" name="no_requisicion" placeholder="No de Requisicion" title="" type="text" />
+	</div>
+</div>
+{% endif %}
+<div class="form-group col-md-4 text-center">
+	<label class="control-label" for="id_fecha_requerida_day">Fecha Requerida</label>
+	<div class="row bootstrap3-multi-input">
+		<div class="col-xs-4">
+			<select class="form-control" id="id_fecha_requerida_day" name="fecha_requerida_day" required="required" title="">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
+				<option value="17">17</option>
+				<option value="18">18</option>
+				<option value="19">19</option>
+				<option value="20">20</option>
+				<option value="21">21</option>
+				<option value="22">22</option>
+				<option value="23">23</option>
+				<option value="24">24</option>
+				<option value="25">25</option>
+				<option value="26">26</option>
+				<option value="27">27</option>
+				<option value="28">28</option>
+				<option value="29">29</option>
+				<option value="30">30</option>
+				<option value="31">31</option>
+			</select>
+		</div>
+		<div class="col-xs-4">
+			<select class="form-control" id="id_fecha_requerida_month" name="fecha_requerida_month" required="required" title="">
+				<option value="1">Enero</option>
+				<option value="2">Febrero</option>
+				<option value="3">Marzo</option>
+				<option value="4">Abril</option>
+				<option value="5">Mayo</option>
+				<option value="6">Junio</option>
+				<option value="7">Julio</option>
+				<option value="8">Agosto</option>
+				<option value="9">Septiembre</option>
+				<option value="10">Octubre</option>
+				<option value="11">Noviembre</option>
+				<option value="12">Diciembre</option>
+			</select>
+		</div>
+		<div class="col-xs-4">
+			<select class="form-control" id="id_fecha_requerida_year" name="fecha_requerida_year" required="required" title="">
+				<option value="2018">2018</option>
+				<option value="2019">2019</option>
+				<option value="2020">2020</option>
+				<option value="2021">2021</option>
+				<option value="2022">2022</option>
+				<option value="2023">2023</option>
+				<option value="2024">2024</option>
+				<option value="2025">2025</option>
+				<option value="2026">2026</option>
+				<option value="2027">2027</option>
+			</select>
+		</div>
+	</div>
+</div>
+<div class="col-md-12">
+	<div class="form-group">
+		<label class="control-label" for="id_lugar_entrega">Lugar de Entrega</label>
+		<select class="form-control" id="id_lugar_entrega" name="lugar_entrega" required="required" title="">
+			<option value="" selected="selected">---------</option>
+			<option value="Calz Tlalpan No. 4502 Secc. XVI Bel. Dom. CP. 14080">Calz Tlalpan No. 4502 Secc. XVI Bel. Dom. CP. 14080</option>
+		</select>
+	</div>
+</div>
+<div class="col-xs-6 text-center">
+	<div class="form-group">
+		<label class="control-label" for="id_clave_cucop">Clave CUCOP</label>
+		<select class="form-control" id="id_clave_cucop" name="clave_cucop" required="required" title="">
+			<option value="" selected="selected">---------</option>
+			<option value="4">31100001</option>
+			<option value="5">31200001</option>
+			<option value="6">31300001</option>
+			<option value="7">31400001</option>
+			<option value="8">31500001</option>
+			<option value="9">31600005</option>
+			<option value="10">31600001</option>
+			<option value="11">31600030</option>
+			<option value="12">31700002</option>
+			<option value="13">31700003</option>
+			<option value="14">31700004</option>
+			<option value="15">31700005</option>
+			<option value="16">31700006</option>
+			<option value="17">31800001</option>
+			<option value="18">31800002</option>
+			<option value="19">31900001</option>
+			<option value="20">31900002</option>
+			<option value="21">31900003</option>
+			<option value="22">31900010</option>
+			<option value="23">31900004</option>
+			<option value="24">32300001</option>
+			<option value="25">32300002</option>
+			<option value="26">32300003</option>
+			<option value="27">32400001</option>
+			<option value="28">32400002</option>
+			<option value="29">32500002</option>
+			<option value="30">32500007</option>
+			<option value="31">32500012</option>
+			<option value="32">32500017</option>
+			<option value="33">32500022</option>
+			<option value="34">32500004</option>
+			<option value="35">32500009</option>
+			<option value="36">32500014</option>
+			<option value="37">32500019</option>
+			<option value="38">32500024</option>
+			<option value="39">32500003</option>
+			<option value="40">32500008</option>
+			<option value="41">32500013</option>
+			<option value="42">32500018</option>
+			<option value="43">32500023</option>
+			<option value="44">32500001</option>
+			<option value="45">32500006</option>
+			<option value="46">32500011</option>
+			<option value="47">32500016</option>
+			<option value="48">32500021</option>
+			<option value="49">32500005</option>
+			<option value="50">32500010</option>
+			<option value="51">32500015</option>
+			<option value="52">32500020</option>
+			<option value="53">32500025</option>
+			<option value="54">32600001</option>
+			<option value="55">32600002</option>
+			<option value="56">32600003</option>
+			<option value="57">32600004</option>
+			<option value="58">32600005</option>
+			<option value="59">32600006</option>
+			<option value="60">32600007</option>
+			<option value="61">32600008</option>
+			<option value="62">32600009</option>
+			<option value="63">32600010</option>
+			<option value="64">32700001</option>
+			<option value="65">32700002</option>
+			<option value="66">32700003</option>
+			<option value="67">32700004</option>
+			<option value="68">32700005</option>
+			<option value="69">32900001</option>
+			<option value="70">32900003</option>
+			<option value="71">33100003</option>
+			<option value="72">33100004</option>
+			<option value="73">33100005</option>
+			<option value="74">33100001</option>
+			<option value="75">33100002</option>
+			<option value="76">33100006</option>
+			<option value="77">33100007</option>
+			<option value="78">33100008</option>
+			<option value="79">33200004</option>
+			<option value="80">33300001</option>
+			<option value="81">33300006</option>
+			<option value="82">33300007</option>
+			<option value="83">33300008</option>
+			<option value="84">33300002</option>
+			<option value="85">33300003</option>
+			<option value="86">33300004</option>
+			<option value="87">33300005</option>
+			<option value="88">33300015</option>
+			<option value="89">33300009</option>
+			<option value="90">33400001</option>
+			<option value="91">33500001</option>
+			<option value="92">33500002</option>
+			<option value="93">33500003</option>
+			<option value="94">33500004</option>
+			<option value="95">33500005</option>
+			<option value="96">33500006</option>
+			<option value="97">33500007</option>
+			<option value="98">33500008</option>
+			<option value="99">33500009</option>
+			<option value="100">33500010</option>
+			<option value="101">33601001</option>
+			<option value="102">33602001</option>
+			<option value="103">33602002</option>
+			<option value="104">33602003</option>
+			<option value="105">33602004</option>
+			<option value="106">33602005</option>
+			<option value="107">33602006</option>
+			<option value="108">33602007</option>
+			<option value="109">33602008</option>
+			<option value="110">33602009</option>
+			<option value="111">33602010</option>
+			<option value="112">33602011</option>
+			<option value="113">33600002</option>
+			<option value="114">33600001</option>
+			<option value="115">33600003</option>
+			<option value="116">33600004</option>
+			<option value="117">33600005</option>
+			<option value="118">33700001</option>
+			<option value="119">33700002</option>
+			<option value="120">33700003</option>
+			<option value="121">33700004</option>
+			<option value="122">33700005</option>
+			<option value="123">33800001</option>
+			<option value="124">33900001</option>
+			<option value="125">33900002</option>
+			<option value="126">33900003</option>
+			<option value="127">33900004</option>
+			<option value="128">33900005</option>
+			<option value="129">33900006</option>
+			<option value="130">33900007</option>
+			<option value="131">33900008</option>
+			<option value="132">33900009</option>
+			<option value="133">33900010</option>
+			<option value="134">33900020</option>
+			<option value="135">33900021</option>
+			<option value="136">33900022</option>
+			<option value="137">33900011</option>
+			<option value="138">33900012</option>
+			<option value="139">33900013</option>
+			<option value="140">33900014</option>
+			<option value="141">33900015</option>
+			<option value="142">33900016</option>
+			<option value="143">34100001</option>
+			<option value="144">34100002</option>
+			<option value="145">34300001</option>
+			<option value="146">34400001</option>
+			<option value="147">34400002</option>
+			<option value="148">34500001</option>
+			<option value="149">34500002</option>
+			<option value="150">34500003</option>
+			<option value="151">34500004</option>
+			<option value="152">34500005</option>
+			<option value="153">34600001</option>
+			<option value="154">34600002</option>
+			<option value="155">34600003</option>
+			<option value="156">34700001</option>
+			<option value="157">34700002</option>
+			<option value="158">34700003</option>
+			<option value="159">34700004</option>
+			<option value="160">34700005</option>
+			<option value="161">35100001</option>
+			<option value="162">35100003</option>
+			<option value="163">35100004</option>
+			<option value="164">35200001</option>
+			<option value="165">35200003</option>
+			<option value="166">35200004</option>
+			<option value="167">35200005</option>
+			<option value="168">35200006</option>
+			<option value="169">35200007</option>
+			<option value="170">35300001</option>
+			<option value="171">35300002</option>
+			<option value="172">35400001</option>
+			<option value="173">35400002</option>
+			<option value="174">35400003</option>
+			<option value="175">35500001</option>
+			<option value="176">35500002</option>
+			<option value="177">35500003</option>
+			<option value="178">35500004</option>
+			<option value="179">35500005</option>
+			<option value="180">35600001</option>
+			<option value="181">35600002</option>
+			<option value="182">35700001</option>
+			<option value="183">35700002</option>
+			<option value="184">35700003</option>
+			<option value="185">35800001</option>
+			<option value="186">35800002</option>
+			<option value="187">35800003</option>
+			<option value="188">35800004</option>
+			<option value="189">35800005</option>
+			<option value="190">35900001</option>
+			<option value="191">35900002</option>
+			<option value="192">35900003</option>
+			<option value="193">35900004</option>
+			<option value="194">36100001</option>
+			<option value="195">36100002</option>
+			<option value="196">36200001</option>
+			<option value="197">36300001</option>
+			<option value="198">36400001</option>
+			<option value="199">36400002</option>
+			<option value="200">36400003</option>
+			<option value="201">36500001</option>
+			<option value="202">36500002</option>
+			<option value="203">36600001</option>
+			<option value="204">36900001</option>
+			<option value="205">37100003</option>
+			<option value="206">37100004</option>
+			<option value="207">37100005</option>
+			<option value="208">37100006</option>
+			<option value="209">37100001</option>
+			<option value="210">37100002</option>
+			<option value="211">37200001</option>
+			<option value="212">37200002</option>
+			<option value="213">37200003</option>
+			<option value="214">37200004</option>
+			<option value="215">37200005</option>
+			<option value="216">37200006</option>
+			<option value="217">37200007</option>
+			<option value="218">37200008</option>
+			<option value="219">38200001</option>
+			<option value="220">38200002</option>
+			<option value="221">38300001</option>
+			<option value="222">38400001</option>
+			<option value="223">39602001</option>
+			<option value="224">39602002</option>
+			<option value="225">61100101</option>
+			<option value="226">61100102</option>
+			<option value="227">61100103</option>
+			<option value="228">61100104</option>
+			<option value="229">61100105</option>
+			<option value="230">61100201</option>
+			<option value="231">61100202</option>
+			<option value="232">61100203</option>
+			<option value="233">61100204</option>
+			<option value="234">61100205</option>
+			<option value="235">61100206</option>
+			<option value="236">61200101</option>
+			<option value="237">61200102</option>
+			<option value="238">61200103</option>
+			<option value="239">61200104</option>
+			<option value="240">61200105</option>
+			<option value="241">61200106</option>
+			<option value="242">61200107</option>
+			<option value="243">61200108</option>
+			<option value="244">61200109</option>
+			<option value="245">61200110</option>
+			<option value="246">61200111</option>
+			<option value="247">61200112</option>
+			<option value="248">61200113</option>
+			<option value="249">61200114</option>
+			<option value="250">61200115</option>
+			<option value="251">61200116</option>
+			<option value="252">61200117</option>
+			<option value="253">61200118</option>
+			<option value="254">61200119</option>
+			<option value="255">61200120</option>
+			<option value="256">61200121</option>
+			<option value="257">61200122</option>
+			<option value="258">61200123</option>
+			<option value="259">61200201</option>
+			<option value="260">61200202</option>
+			<option value="261">61200203</option>
+			<option value="262">61200204</option>
+			<option value="263">61200205</option>
+			<option value="264">61200206</option>
+			<option value="265">61200207</option>
+			<option value="266">61200208</option>
+			<option value="267">61200209</option>
+			<option value="268">61200210</option>
+			<option value="269">61200211</option>
+			<option value="270">61200212</option>
+			<option value="271">61200213</option>
+			<option value="272">61200214</option>
+			<option value="273">61200215</option>
+			<option value="274">61200216</option>
+			<option value="275">61200217</option>
+			<option value="276">61200218</option>
+			<option value="277">61200219</option>
+			<option value="278">61200220</option>
+			<option value="279">61200221</option>
+			<option value="280">61200222</option>
+			<option value="281">61200223</option>
+			<option value="282">61200224</option>
+			<option value="283">61200225</option>
+			<option value="284">61200226</option>
+			<option value="285">61200227</option>
+			<option value="286">61200228</option>
+			<option value="287">61200229</option>
+			<option value="288">61200230</option>
+			<option value="289">61200231</option>
+			<option value="290">61200232</option>
+			<option value="291">61200233</option>
+			<option value="292">61200234</option>
+			<option value="293">61200235</option>
+			<option value="294">61200236</option>
+			<option value="295">61200237</option>
+			<option value="296">61200238</option>
+			<option value="297">61200239</option>
+			<option value="298">61200240</option>
+			<option value="299">61200241</option>
+			<option value="300">61200242</option>
+			<option value="301">61200243</option>
+			<option value="302">61200244</option>
+			<option value="303">61200245</option>
+			<option value="304">61200246</option>
+			<option value="305">61200247</option>
+			<option value="306">61200248</option>
+			<option value="307">61200249</option>
+			<option value="308">61200250</option>
+			<option value="309">61300101</option>
+			<option value="310">61300102</option>
+			<option value="311">61300103</option>
+			<option value="312">61300104</option>
+			<option value="313">61300105</option>
+			<option value="314">61300106</option>
+			<option value="315">61300107</option>
+			<option value="316">61300108</option>
+			<option value="317">61300109</option>
+			<option value="318">61300110</option>
+			<option value="319">61300201</option>
+			<option value="320">61300202</option>
+			<option value="321">61300203</option>
+			<option value="322">61300204</option>
+			<option value="323">61300205</option>
+			<option value="324">61300206</option>
+			<option value="325">61300207</option>
+			<option value="326">61300208</option>
+			<option value="327">61300209</option>
+			<option value="328">61300210</option>
+			<option value="329">61300211</option>
+			<option value="330">61300212</option>
+			<option value="331">61300213</option>
+			<option value="332">61300214</option>
+			<option value="333">61300215</option>
+			<option value="334">61300216</option>
+			<option value="335">61300217</option>
+			<option value="336">61300218</option>
+			<option value="337">61300219</option>
+			<option value="338">61300220</option>
+			<option value="339">61300221</option>
+			<option value="340">61300222</option>
+			<option value="341">61300223</option>
+			<option value="342">61300224</option>
+			<option value="343">61300225</option>
+			<option value="344">61400101</option>
+			<option value="345">61400102</option>
+			<option value="346">61400103</option>
+			<option value="347">61400104</option>
+			<option value="348">61400105</option>
+			<option value="349">61400106</option>
+			<option value="350">61400107</option>
+			<option value="351">61400108</option>
+			<option value="352">61400109</option>
+			<option value="353">61400110</option>
+			<option value="354">61400111</option>
+			<option value="355">61400112</option>
+			<option value="356">61400113</option>
+			<option value="357">61400114</option>
+			<option value="358">61400115</option>
+			<option value="359">61400116</option>
+			<option value="360">61400117</option>
+			<option value="361">61400118</option>
+			<option value="362">61400119</option>
+			<option value="363">61400120</option>
+			<option value="364">61400121</option>
+			<option value="365">61400122</option>
+			<option value="366">61400123</option>
+			<option value="367">61400124</option>
+			<option value="368">61400125</option>
+			<option value="369">61400126</option>
+			<option value="370">61400127</option>
+			<option value="371">61400128</option>
+			<option value="372">61400129</option>
+			<option value="373">61400130</option>
+			<option value="374">61400131</option>
+			<option value="375">61400132</option>
+			<option value="376">61400133</option>
+			<option value="377">61400134</option>
+			<option value="378">61400135</option>
+			<option value="379">61400136</option>
+			<option value="380">61400137</option>
+			<option value="381">61400138</option>
+			<option value="382">61400139</option>
+			<option value="383">61400140</option>
+			<option value="384">61400201</option>
+			<option value="385">61400202</option>
+			<option value="386">61400203</option>
+			<option value="387">61400204</option>
+			<option value="388">61400205</option>
+			<option value="389">61400206</option>
+			<option value="390">61400207</option>
+			<option value="391">61400208</option>
+			<option value="392">61400209</option>
+			<option value="393">61400210</option>
+			<option value="394">61400301</option>
+			<option value="395">61400302</option>
+			<option value="396">61400303</option>
+			<option value="397">61400304</option>
+			<option value="398">61400305</option>
+			<option value="399">61400306</option>
+			<option value="400">61400307</option>
+			<option value="401">61400308</option>
+			<option value="402">61400309</option>
+			<option value="403">61400310</option>
+			<option value="404">61400311</option>
+			<option value="405">61400312</option>
+			<option value="406">61400313</option>
+			<option value="407">61400314</option>
+			<option value="408">61400315</option>
+			<option value="409">61400316</option>
+			<option value="410">61400317</option>
+			<option value="411">61400318</option>
+			<option value="412">61400319</option>
+			<option value="413">61400320</option>
+			<option value="414">61400321</option>
+			<option value="415">61400322</option>
+			<option value="416">61400323</option>
+			<option value="417">61400324</option>
+			<option value="418">61400325</option>
+			<option value="419">61500101</option>
+			<option value="420">61500102</option>
+			<option value="421">61500103</option>
+			<option value="422">61500104</option>
+			<option value="423">61500105</option>
+			<option value="424">61500106</option>
+			<option value="425">61500107</option>
+			<option value="426">61500108</option>
+			<option value="427">61500109</option>
+			<option value="428">61500110</option>
+			<option value="429">61500111</option>
+			<option value="430">61500112</option>
+			<option value="431">61500113</option>
+			<option value="432">61500201</option>
+			<option value="433">61500202</option>
+			<option value="434">61500203</option>
+			<option value="435">61500204</option>
+			<option value="436">61500205</option>
+			<option value="437">61500206</option>
+			<option value="438">61500207</option>
+			<option value="439">61500208</option>
+			<option value="440">61500209</option>
+			<option value="441">61500210</option>
+			<option value="442">61500211</option>
+			<option value="443">61500212</option>
+			<option value="444">61500213</option>
+			<option value="445">61500214</option>
+			<option value="446">61500215</option>
+			<option value="447">61500216</option>
+			<option value="448">61500217</option>
+			<option value="449">61500218</option>
+			<option value="450">61500219</option>
+			<option value="451">61500220</option>
+			<option value="452">61500221</option>
+			<option value="453">61500222</option>
+			<option value="454">61500223</option>
+			<option value="455">61500224</option>
+			<option value="456">61500225</option>
+			<option value="457">61600101</option>
+			<option value="458">61600102</option>
+			<option value="459">61600103</option>
+			<option value="460">61600104</option>
+			<option value="461">61600105</option>
+			<option value="462">61600106</option>
+			<option value="463">61600107</option>
+			<option value="464">61600108</option>
+			<option value="465">61600109</option>
+			<option value="466">61600110</option>
+			<option value="467">61600111</option>
+			<option value="468">61600112</option>
+			<option value="695">62202022</option>
+			<option value="469">61600113</option>
+			<option value="470">61600114</option>
+			<option value="471">61600115</option>
+			<option value="472">61600116</option>
+			<option value="473">61600117</option>
+			<option value="474">61600118</option>
+			<option value="475">61600119</option>
+			<option value="476">61600201</option>
+			<option value="477">61600202</option>
+			<option value="478">61600203</option>
+			<option value="479">61600204</option>
+			<option value="480">61600205</option>
+			<option value="481">61600206</option>
+			<option value="482">61600207</option>
+			<option value="483">61600208</option>
+			<option value="484">61600209</option>
+			<option value="485">61600210</option>
+			<option value="486">61600211</option>
+			<option value="487">61600212</option>
+			<option value="488">61600213</option>
+			<option value="489">61600214</option>
+			<option value="490">61600215</option>
+			<option value="491">61600216</option>
+			<option value="492">61600217</option>
+			<option value="493">61600218</option>
+			<option value="494">61600219</option>
+			<option value="495">61600220</option>
+			<option value="496">61600221</option>
+			<option value="497">61600222</option>
+			<option value="498">61600223</option>
+			<option value="499">61600224</option>
+			<option value="500">61600225</option>
+			<option value="501">61600226</option>
+			<option value="502">61600227</option>
+			<option value="503">61600228</option>
+			<option value="504">61600229</option>
+			<option value="505">61600230</option>
+			<option value="506">61600231</option>
+			<option value="507">61600232</option>
+			<option value="508">61600233</option>
+			<option value="509">61600234</option>
+			<option value="510">61600235</option>
+			<option value="511">61600236</option>
+			<option value="512">61600237</option>
+			<option value="513">61600238</option>
+			<option value="514">61600239</option>
+			<option value="515">61600240</option>
+			<option value="516">61600241</option>
+			<option value="517">61600242</option>
+			<option value="518">61600243</option>
+			<option value="519">61600244</option>
+			<option value="520">61600245</option>
+			<option value="521">61700101</option>
+			<option value="522">61700102</option>
+			<option value="523">61700103</option>
+			<option value="524">61700104</option>
+			<option value="525">61700105</option>
+			<option value="526">61700106</option>
+			<option value="527">61700107</option>
+			<option value="528">61700108</option>
+			<option value="529">61700109</option>
+			<option value="530">61700110</option>
+			<option value="531">61700111</option>
+			<option value="532">61700112</option>
+			<option value="533">61700113</option>
+			<option value="534">61700114</option>
+			<option value="535">61700115</option>
+			<option value="536">61700116</option>
+			<option value="537">61700117</option>
+			<option value="538">61700118</option>
+			<option value="539">61700119</option>
+			<option value="540">61700120</option>
+			<option value="541">61700121</option>
+			<option value="542">61700122</option>
+			<option value="543">61700123</option>
+			<option value="544">61700124</option>
+			<option value="545">61700125</option>
+			<option value="546">61700126</option>
+			<option value="547">61700127</option>
+			<option value="548">61700128</option>
+			<option value="549">61700129</option>
+			<option value="550">61700130</option>
+			<option value="551">61700131</option>
+			<option value="552">61700132</option>
+			<option value="553">61700133</option>
+			<option value="554">61700134</option>
+			<option value="555">61700135</option>
+			<option value="556">61700136</option>
+			<option value="557">61700137</option>
+			<option value="558">61700138</option>
+			<option value="559">61700139</option>
+			<option value="560">61700140</option>
+			<option value="561">61700141</option>
+			<option value="562">61700142</option>
+			<option value="563">61700143</option>
+			<option value="564">61700144</option>
+			<option value="565">61700145</option>
+			<option value="566">61700146</option>
+			<option value="567">61700147</option>
+			<option value="568">61700148</option>
+			<option value="569">61700149</option>
+			<option value="570">61700150</option>
+			<option value="571">61700151</option>
+			<option value="572">61700152</option>
+			<option value="573">61700153</option>
+			<option value="574">61700154</option>
+			<option value="575">61700155</option>
+			<option value="576">61700156</option>
+			<option value="577">61700157</option>
+			<option value="578">61700158</option>
+			<option value="579">61900101</option>
+			<option value="580">61900201</option>
+			<option value="581">61900202</option>
+			<option value="582">61900203</option>
+			<option value="583">61900204</option>
+			<option value="584">61900205</option>
+			<option value="585">61900206</option>
+			<option value="586">61900207</option>
+			<option value="587">61900208</option>
+			<option value="588">61900209</option>
+			<option value="589">61900210</option>
+			<option value="590">61900211</option>
+			<option value="591">61900212</option>
+			<option value="592">61900213</option>
+			<option value="593">61900214</option>
+			<option value="594">61900215</option>
+			<option value="595">61900301</option>
+			<option value="596">61900401</option>
+			<option value="597">61900501</option>
+			<option value="598">61900502</option>
+			<option value="599">61900503</option>
+			<option value="600">61900504</option>
+			<option value="601">61900505</option>
+			<option value="602">61900506</option>
+			<option value="603">61900507</option>
+			<option value="604">61900508</option>
+			<option value="605">61900509</option>
+			<option value="606">61900510</option>
+			<option value="607">61900511</option>
+			<option value="608">61900512</option>
+			<option value="609">61900513</option>
+			<option value="610">61900514</option>
+			<option value="611">61900515</option>
+			<option value="612">61900516</option>
+			<option value="613">61900517</option>
+			<option value="614">61900518</option>
+			<option value="615">61900519</option>
+			<option value="616">61900520</option>
+			<option value="617">61900521</option>
+			<option value="618">61900522</option>
+			<option value="619">61900523</option>
+			<option value="620">61900524</option>
+			<option value="621">61900525</option>
+			<option value="622">61900526</option>
+			<option value="623">61900527</option>
+			<option value="624">61900528</option>
+			<option value="625">61900529</option>
+			<option value="626">61900530</option>
+			<option value="627">61900531</option>
+			<option value="628">61900532</option>
+			<option value="629">61900533</option>
+			<option value="630">61900534</option>
+			<option value="631">61900535</option>
+			<option value="632">61900536</option>
+			<option value="633">61900537</option>
+			<option value="634">61900538</option>
+			<option value="635">61900539</option>
+			<option value="636">61900540</option>
+			<option value="637">61900541</option>
+			<option value="638">61900542</option>
+			<option value="639">62101001</option>
+			<option value="640">62101002</option>
+			<option value="641">62101003</option>
+			<option value="642">62101004</option>
+			<option value="643">62101005</option>
+			<option value="644">62102001</option>
+			<option value="645">62102002</option>
+			<option value="646">62102003</option>
+			<option value="647">62102004</option>
+			<option value="648">62102005</option>
+			<option value="649">62102006</option>
+			<option value="650">62201001</option>
+			<option value="651">62201002</option>
+			<option value="652">62201003</option>
+			<option value="653">62201004</option>
+			<option value="654">62201005</option>
+			<option value="655">62201006</option>
+			<option value="656">62201007</option>
+			<option value="657">62201008</option>
+			<option value="658">62201009</option>
+			<option value="659">62201010</option>
+			<option value="660">62201011</option>
+			<option value="661">62201012</option>
+			<option value="662">62201013</option>
+			<option value="663">62201014</option>
+			<option value="664">62201015</option>
+			<option value="665">62201016</option>
+			<option value="666">62201017</option>
+			<option value="667">62201018</option>
+			<option value="668">62201019</option>
+			<option value="669">62201020</option>
+			<option value="670">62201021</option>
+			<option value="671">62201022</option>
+			<option value="672">62201023</option>
+			<option value="673">62201024</option>
+			<option value="674">62202001</option>
+			<option value="675">62202002</option>
+			<option value="676">62202003</option>
+			<option value="677">62202004</option>
+			<option value="678">62202005</option>
+			<option value="679">62202006</option>
+			<option value="680">62202007</option>
+			<option value="681">62202008</option>
+			<option value="682">62202009</option>
+			<option value="683">62202010</option>
+			<option value="684">62202011</option>
+			<option value="685">62202012</option>
+			<option value="686">62202013</option>
+			<option value="687">62202014</option>
+			<option value="688">62202015</option>
+			<option value="689">62202016</option>
+			<option value="690">62202017</option>
+			<option value="691">62202018</option>
+			<option value="692">62202019</option>
+			<option value="693">62202020</option>
+			<option value="694">62202021</option>
+			<option value="696">62202023</option>
+			<option value="697">62202024</option>
+			<option value="698">62202025</option>
+			<option value="699">62202026</option>
+			<option value="700">62202027</option>
+			<option value="701">62202028</option>
+			<option value="702">62202029</option>
+			<option value="703">62202030</option>
+			<option value="704">62202031</option>
+			<option value="705">62202032</option>
+			<option value="706">62202033</option>
+			<option value="707">62202034</option>
+			<option value="708">62202035</option>
+			<option value="709">62202036</option>
+			<option value="710">62202037</option>
+			<option value="711">62202038</option>
+			<option value="712">62202039</option>
+			<option value="713">62202040</option>
+			<option value="714">62202041</option>
+			<option value="715">62202042</option>
+			<option value="716">62202043</option>
+			<option value="717">62202044</option>
+			<option value="718">62202045</option>
+			<option value="719">62202046</option>
+			<option value="720">62202047</option>
+			<option value="721">62202048</option>
+			<option value="722">62202049</option>
+			<option value="723">62202050</option>
+			<option value="724">62301001</option>
+			<option value="725">62301002</option>
+			<option value="726">62301003</option>
+			<option value="727">62301004</option>
+			<option value="728">62301005</option>
+			<option value="729">62301006</option>
+			<option value="730">62301007</option>
+			<option value="731">62301008</option>
+			<option value="732">62301009</option>
+			<option value="733">62301010</option>
+			<option value="734">62302001</option>
+			<option value="735">62302002</option>
+			<option value="736">62302003</option>
+			<option value="737">62302004</option>
+			<option value="738">62302005</option>
+			<option value="739">62302006</option>
+			<option value="740">62302007</option>
+			<option value="741">62302008</option>
+			<option value="742">62302009</option>
+			<option value="743">62302010</option>
+			<option value="744">62302011</option>
+			<option value="745">62302012</option>
+			<option value="746">62302013</option>
+			<option value="747">62302014</option>
+			<option value="748">62302015</option>
+			<option value="749">62302016</option>
+			<option value="750">62302017</option>
+			<option value="751">62302018</option>
+			<option value="752">62302019</option>
+			<option value="753">62302020</option>
+			<option value="754">62302021</option>
+			<option value="755">62302022</option>
+			<option value="756">62302023</option>
+			<option value="757">62302024</option>
+			<option value="758">62302025</option>
+			<option value="759">62401001</option>
+			<option value="760">62401002</option>
+			<option value="761">62401003</option>
+			<option value="762">62401004</option>
+			<option value="763">62401005</option>
+			<option value="764">62401006</option>
+			<option value="765">62401007</option>
+			<option value="766">62401008</option>
+			<option value="767">62401009</option>
+			<option value="768">62401010</option>
+			<option value="769">62401011</option>
+			<option value="770">62401012</option>
+			<option value="771">62401013</option>
+			<option value="772">62401014</option>
+			<option value="773">62401015</option>
+			<option value="774">62401016</option>
+			<option value="775">62401017</option>
+			<option value="776">62401018</option>
+			<option value="777">62401019</option>
+			<option value="778">62401020</option>
+			<option value="779">62401021</option>
+			<option value="780">62401022</option>
+			<option value="781">62401023</option>
+			<option value="782">62401024</option>
+			<option value="783">62401025</option>
+			<option value="784">62401026</option>
+			<option value="785">62401027</option>
+			<option value="786">62401028</option>
+			<option value="787">62401029</option>
+			<option value="788">62401030</option>
+			<option value="789">62401031</option>
+			<option value="790">62401032</option>
+			<option value="791">62401033</option>
+			<option value="792">62401034</option>
+			<option value="793">62401035</option>
+			<option value="794">62401036</option>
+			<option value="795">62401037</option>
+			<option value="796">62401038</option>
+			<option value="797">62401039</option>
+			<option value="798">62401040</option>
+			<option value="799">62402001</option>
+			<option value="800">62402002</option>
+			<option value="801">62402003</option>
+			<option value="802">62402004</option>
+			<option value="803">62402005</option>
+			<option value="804">62402006</option>
+			<option value="805">62402007</option>
+			<option value="806">62402008</option>
+			<option value="807">62402009</option>
+			<option value="808">62402010</option>
+			<option value="809">62403001</option>
+			<option value="810">62403002</option>
+			<option value="811">62403003</option>
+			<option value="812">62403004</option>
+			<option value="813">62403005</option>
+			<option value="814">62403006</option>
+			<option value="815">62403007</option>
+			<option value="816">62403008</option>
+			<option value="817">62403009</option>
+			<option value="818">62403010</option>
+			<option value="819">62403011</option>
+			<option value="820">62403012</option>
+			<option value="821">62403013</option>
+			<option value="822">62403014</option>
+			<option value="823">62403015</option>
+			<option value="824">62403016</option>
+			<option value="825">62403017</option>
+			<option value="826">62403018</option>
+			<option value="827">62403019</option>
+			<option value="828">62403020</option>
+			<option value="829">62403021</option>
+			<option value="830">62403022</option>
+			<option value="831">62403023</option>
+			<option value="832">62403024</option>
+			<option value="833">62403025</option>
+			<option value="834">62501001</option>
+			<option value="835">62501002</option>
+			<option value="836">62501003</option>
+			<option value="837">62501004</option>
+			<option value="838">62501005</option>
+			<option value="839">62501006</option>
+			<option value="840">62501007</option>
+			<option value="841">62501008</option>
+			<option value="842">62501009</option>
+			<option value="843">62501010</option>
+			<option value="844">62501011</option>
+			<option value="845">62501012</option>
+			<option value="846">62501013</option>
+			<option value="847">62502001</option>
+			<option value="848">62502002</option>
+			<option value="849">62502003</option>
+			<option value="850">62502004</option>
+			<option value="851">62502005</option>
+			<option value="852">62502006</option>
+			<option value="853">62502007</option>
+			<option value="854">62502008</option>
+			<option value="855">62502009</option>
+			<option value="856">62502010</option>
+			<option value="857">62502011</option>
+			<option value="858">62502012</option>
+			<option value="859">62502013</option>
+			<option value="860">62502014</option>
+			<option value="861">62502015</option>
+			<option value="862">62502016</option>
+			<option value="863">62502017</option>
+			<option value="864">62502018</option>
+			<option value="865">62502019</option>
+			<option value="866">62502020</option>
+			<option value="867">62502021</option>
+			<option value="868">62502022</option>
+			<option value="869">62502023</option>
+			<option value="870">62502024</option>
+			<option value="871">62502025</option>
+			<option value="872">62601001</option>
+			<option value="873">62601002</option>
+			<option value="874">62601003</option>
+			<option value="875">62601004</option>
+			<option value="876">62601005</option>
+			<option value="877">62601006</option>
+			<option value="878">62601007</option>
+			<option value="879">62601008</option>
+			<option value="880">62601009</option>
+			<option value="881">62601010</option>
+			<option value="882">62601011</option>
+			<option value="883">62601012</option>
+			<option value="884">62601013</option>
+			<option value="885">62601014</option>
+			<option value="886">62601015</option>
+			<option value="887">62601016</option>
+			<option value="888">62601017</option>
+			<option value="889">62601018</option>
+			<option value="890">62601019</option>
+			<option value="891">62602001</option>
+			<option value="892">62602002</option>
+			<option value="893">62602003</option>
+			<option value="894">62602004</option>
+			<option value="895">62602005</option>
+			<option value="896">62602006</option>
+			<option value="897">62602007</option>
+			<option value="898">62602008</option>
+			<option value="899">62602009</option>
+			<option value="900">62602010</option>
+			<option value="901">62602011</option>
+			<option value="902">62602012</option>
+			<option value="903">62602013</option>
+			<option value="904">62602014</option>
+			<option value="905">62602015</option>
+			<option value="906">62602016</option>
+			<option value="907">62602017</option>
+			<option value="908">62602018</option>
+			<option value="909">62602019</option>
+			<option value="910">62602020</option>
+			<option value="911">62602021</option>
+			<option value="912">62602022</option>
+			<option value="913">62602023</option>
+			<option value="914">62602024</option>
+			<option value="915">62602025</option>
+			<option value="916">62602026</option>
+			<option value="917">62602027</option>
+			<option value="918">62602028</option>
+			<option value="919">62602029</option>
+			<option value="920">62602030</option>
+			<option value="921">62602031</option>
+			<option value="922">62602032</option>
+			<option value="923">62602033</option>
+			<option value="924">62602034</option>
+			<option value="925">62602035</option>
+			<option value="926">62602036</option>
+			<option value="927">62602037</option>
+			<option value="928">62602038</option>
+			<option value="929">62602039</option>
+			<option value="930">62602040</option>
+			<option value="931">62602041</option>
+			<option value="932">62602042</option>
+			<option value="933">62602043</option>
+			<option value="934">62602044</option>
+			<option value="935">62602045</option>
+			<option value="936">62701001</option>
+			<option value="937">62701002</option>
+			<option value="938">62701003</option>
+			<option value="939">62701004</option>
+			<option value="940">62701005</option>
+			<option value="941">62701006</option>
+			<option value="942">62701007</option>
+			<option value="943">62701008</option>
+			<option value="944">62701009</option>
+			<option value="945">62701010</option>
+			<option value="946">62701011</option>
+			<option value="947">62701012</option>
+			<option value="948">62701013</option>
+			<option value="949">62701014</option>
+			<option value="950">62701015</option>
+			<option value="951">62701016</option>
+			<option value="952">62701017</option>
+			<option value="953">62701018</option>
+			<option value="954">62701019</option>
+			<option value="955">62701020</option>
+			<option value="956">62701021</option>
+			<option value="957">62701022</option>
+			<option value="958">62701023</option>
+			<option value="959">62701024</option>
+			<option value="960">62701025</option>
+			<option value="961">62701026</option>
+			<option value="962">62701027</option>
+			<option value="963">62701028</option>
+			<option value="964">62701029</option>
+			<option value="965">62701030</option>
+			<option value="966">62701031</option>
+			<option value="967">62701032</option>
+			<option value="968">62701033</option>
+			<option value="969">62701034</option>
+			<option value="970">62701035</option>
+			<option value="971">62701036</option>
+			<option value="972">62701037</option>
+			<option value="973">62701038</option>
+			<option value="974">62701039</option>
+			<option value="975">62701040</option>
+			<option value="976">62701041</option>
+			<option value="977">62701042</option>
+			<option value="978">62701043</option>
+			<option value="979">62701044</option>
+			<option value="980">62701045</option>
+			<option value="981">62701046</option>
+			<option value="982">62701047</option>
+			<option value="983">62701048</option>
+			<option value="984">62701049</option>
+			<option value="985">62701050</option>
+			<option value="986">62701051</option>
+			<option value="987">62701052</option>
+			<option value="988">62701053</option>
+			<option value="989">62701054</option>
+			<option value="990">62701055</option>
+			<option value="991">62701056</option>
+			<option value="992">62701057</option>
+			<option value="993">62701058</option>
+			<option value="994">62901001</option>
+			<option value="995">62902001</option>
+			<option value="996">62902002</option>
+			<option value="997">62902003</option>
+			<option value="998">62902004</option>
+			<option value="999">62902005</option>
+			<option value="1000">62902006</option>
+			<option value="1001">62902007</option>
+			<option value="1002">62902008</option>
+			<option value="1003">62902009</option>
+			<option value="1004">62902010</option>
+			<option value="1005">62902011</option>
+			<option value="1006">62902012</option>
+			<option value="1007">62902013</option>
+			<option value="1008">62902014</option>
+			<option value="1009">62902015</option>
+			<option value="1010">62903001</option>
+			<option value="1011">62904001</option>
+			<option value="1012">62905001</option>
+			<option value="1013">62905002</option>
+			<option value="1014">62905003</option>
+			<option value="1015">62905004</option>
+			<option value="1016">62905005</option>
+			<option value="1017">62905006</option>
+			<option value="1018">62905007</option>
+			<option value="1019">62905008</option>
+			<option value="1020">62905009</option>
+			<option value="1021">62905010</option>
+			<option value="1022">62905011</option>
+			<option value="1023">62905012</option>
+			<option value="1024">62905013</option>
+			<option value="1025">62905014</option>
+			<option value="1026">62905015</option>
+			<option value="1027">62905016</option>
+			<option value="1028">62905017</option>
+			<option value="1029">62905018</option>
+			<option value="1030">62905019</option>
+			<option value="1031">62905020</option>
+			<option value="1032">62905021</option>
+			<option value="1033">62905022</option>
+			<option value="1034">62905023</option>
+			<option value="1035">62905024</option>
+			<option value="1036">62905025</option>
+			<option value="1037">62905026</option>
+			<option value="1038">62905027</option>
+			<option value="1039">62905028</option>
+			<option value="1040">62905029</option>
+			<option value="1041">62905030</option>
+			<option value="1042">62905031</option>
+			<option value="1043">62905032</option>
+			<option value="1044">62905033</option>
+			<option value="1045">62905034</option>
+			<option value="1046">62905035</option>
+			<option value="1047">62905036</option>
+			<option value="1048">62905037</option>
+			<option value="1049">62905038</option>
+			<option value="1050">62905039</option>
+			<option value="1051">62905040</option>
+			<option value="1052">62905041</option>
+			<option value="1053">62905042</option>
+		</select>
+	</div>
+</div>
+<div class="col-md-6 text-center">
+	<div class="form-group">
+		<label class="control-label" for="id_partida">Partida</label>
+		<input class="form-control" id="id_partida" name="partida" placeholder="Partida" required="required" title="" type="text" />
+	</div>
+</div>
+<div class="col-md-6 text-center">
+	<div class="form-group">
+		<label class="control-label" for="id_descripcion">Descripcion</label>
+		<textarea class="form-control" cols="40" id="id_descripcion" maxlength="400" name="descripcion" placeholder="Descripcion" required="required" rows="10" title=""></textarea>
+	</div>
+</div>
+<div class="col-md-6 text-center">
+	<div class="form-group">
+		<label class="control-label" for="id_descripcion_detallada">Descripcion Detallada</label>
+		<textarea class="form-control" cols="40" id="id_descripcion_detallada" maxlength="400" name="descripcion_detallada" placeholder="Descripcion Detallada" required="required" rows="10" title=""></textarea>
+	</div>
+</div>
+<div class="col-md-6 text-center">
+	<div class="form-group">
+		<label class="control-label" for="id_cantidad_solicitada">Cantidad Solicitada</label>
+		<select class="form-control" id="id_cantidad_solicitada" name="cantidad_solicitada" required="required" title="">
+			<option value="" selected="selected">---------</option>
+			<option value="1">1</option>
+		</select>
+	</div>
+</div>
+<div class="col-md-6 text-center">
+	<div class="form-group">
+		<label class="control-label" for="id_unidad_medida">Unidad de Medida</label>
+		<input class="form-control" id="id_unidad_medida" name="unidad_medida" placeholder="Unidad de Medida" required="required" title="" type="text" />
+	</div>
+</div>
+<div class="col-md-3 text-center">
+	<div class="form-group">
+		<label class="control-label" for="id_precio_unitario">Precio Unitario</label>
+		<input class="form-control" id="id_precio_unitario" name="precio_unitario" placeholder="Precio Unitario" required="required" title="" type="text" />
+	</div>
+</div>
+<div class="col-md-3 text-center">
+	<div class="form-group">
+		<label class="control-label" for="id_importe">Importe</label>
+		<input class="form-control" id="id_importe" name="importe" placeholder="Importe" required="required" title="" type="text" />
+	</div>
+</div>
+<div class="col-md-3 text-center">
+	<div class="form-group">
+		<label class="control-label" for="id_subtotal">Subtotal</label>
+		<input class="form-control" id="id_subtotal" name="subtotal" placeholder="Subtotal" required="required" title="" type="text" />
+	</div>
+</div>
+<div class="col-md-3 text-center">
+	<div class="form-group">
+		<label class="control-label" for="id_iva">IVA</label>
+		<input class="form-control" id="id_iva" name="iva" placeholder="IVA" required="required" title="" type="text" />
+	</div>
+</div>
+<div class="col-md-12 text-center">
+	<div class="form-group">
+		<label class="control-label" for="id_total">Total</label>
+		<input class="form-control" id="id_total" name="total" placeholder="Total" required="required" title="" type="text" />
+	</div>
+</div>
+<div class="col-md-4 text-center">
+	<div class="form-group">
+		<label class="control-label" for="id_otros_gravamenes">Otros Gravamenes</label>
+		<input class="form-control" id="id_otros_gravamenes" name="otros_gravamenes" placeholder="Otros Gravamenes" title="" type="text" />
+	</div>
+</div>
+<div class="col-md-4 text-center">
+	<div class="form-group">
+		<label class="control-label" for="id_anexos">Anexos</label>
+		<select class="form-control" id="id_anexos" name="anexos" required="required" title="">
+			<option value="" selected="selected">---------</option>
+			<option value="SI">SI</option>
+			<option value="NO">NO</option>
+		</select>
+	</div>
+</div>
+<div class="col-md-4 text-center">
+	<div class="form-group">
+		<label class="control-label" for="id_anticipo">Anticipo</label>
+		<select class="form-control" id="id_anticipo" name="anticipo" required="required" title="">
+			<option value="" selected="selected">---------</option>
+			<option value="SI">SI</option>
+			<option value="NO">NO</option>
+		</select>
+	</div>
+</div>
+<div class="col-md-3 text-center">
+	<div class="form-group">
+		<label class="control-label" for="id_autorizacion_presupuesto">Autorizacion del Presupuesto</label>
+		<input class="form-control" id="id_autorizacion_presupuesto" maxlength="400" name="autorizacion_presupuesto" placeholder="Autorizacion del Presupuesto" required="required" title="" type="text" />
+	</div>
+</div>
+<div class="col-md-3 text-center">
+	<div class="form-group">
+		<label class="control-label" for="id_existencia_almacen">Existencia de Alamacen</label>
+		<select class="form-control" id="id_existencia_almacen" name="existencia_almacen" required="required" title="">
+			<option value="" selected="selected">---------</option>
+			<option value="N/A">N/A</option>
+		</select>
+	</div>
+</div>
+<div class="col-md-6 text-center">
+	<div class="form-group">
+		<label class="control-label" for="id_observaciones">Observaciones</label>
+		<input class="form-control" id="id_observaciones" maxlength="400" name="observaciones" placeholder="Observaciones" required="required" title="" type="text" />
+	</div>
+</div>
+<div class="col-md-4 text-center">
+	<div class="form-group">
+		<label class="control-label" for="id_registro_sanitario">Registro Sanitario</label>
+		<input class="form-control" id="id_registro_sanitario" maxlength="400" name="registro_sanitario" placeholder="Registro Sanitario" required="required" title="" type="text" />
+	</div>
+</div>
+<div class="col-md-4 text-center">
+	<div class="form-group">
+		<label class="control-label" for="id_normas">Normas</label>
+		<input class="form-control" id="id_normas" maxlength="400" name="normas" placeholder="Normas" required="required" title="" type="text" />
+	</div>
+</div>
+<div class="col-md-4 text-center">
+	<div class="form-group">
+		<label class="control-label" for="id_capacitacion">Capacitacion</label>
+		<input class="form-control" id="id_capacitacion" maxlength="400" name="capacitacion" placeholder="Capacitacion" required="required" title="" type="text" />
+	</div>
+</div>
+<div class="col-md-6 text-center">
+	<div class="form-group">
+		<label class="control-label" for="id_pais_origen">Pais de Origen</label>
+		<select class="form-control" id="id_pais_origen" name="pais_origen" required="required" title="">
+			<option value="" selected="selected">---------</option>
+			<option value="Nacional (Mexico)">Nacional (Mexico)</option>
+		</select>
+	</div>
+</div>
+<div class="col-md-6 text-center">
+	<div class="form-group">
+		<label class="control-label" for="id_metodo_prueba">Metodo de Prueba</label>
+		<input class="form-control" id="id_metodo_prueba" maxlength="400" name="metodo_prueba" placeholder="Metodo de Prueba" required="required" title="" type="text" />
+	</div>
+</div>
+<div class="col-md-4 text-center">
+	<div class="form-group">
+		<label class="control-label" for="id_tipo_garantia1">Tipo de Garantia 1</label>
+		<select class="form-control" id="id_tipo_garantia1" name="tipo_garantia1" required="required" title="">
+			<option value="" selected="selected">---------</option>
+			<option value="N/A">N/A</option>
+			<option value="Anticipo">Anticipo</option>
+			<option value="Cumplimiento divisible">Cumplimiento divisible</option>
+			<option value="Cumplimiento indivisible">Cumplimiento indivisible</option>
+			<option value="Vicios ocultos">Vicios ocultos</option>
+			<option value="Defectos o Calidad/Poliza de responsbilidad civil/otra">Defectos o Calidad/Poliza de responsbilidad civil/otra</option>
+		</select>
+	</div>
+</div>
+<div class="col-md-4 text-center">
+	<div class="form-group">
+		<label class="control-label" for="id_tipo_garantia2">Tipo de Garantia 2</label>
+		<select class="form-control" id="id_tipo_garantia2" name="tipo_garantia2" required="required" title="">
+			<option value="" selected="selected">---------</option>
+			<option value="N/A">N/A</option>
+			<option value="Anticipo">Anticipo</option>
+			<option value="Cumplimiento divisible">Cumplimiento divisible</option>
+			<option value="Cumplimiento indivisible">Cumplimiento indivisible</option>
+			<option value="Vicios ocultos">Vicios ocultos</option>
+			<option value="Defectos o Calidad/Poliza de responsbilidad civil/otra">Defectos o Calidad/Poliza de responsbilidad civil/otra</option>
+		</select>
+	</div>
+</div>
+<div class="col-md-4 text-center">
+	<div class="form-group">
+		<label class="control-label" for="id_tipo_garantia3">Tipo de Garantia 3</label>
+		<select class="form-control" id="id_tipo_garantia3" name="tipo_garantia3" required="required" title="">
+			<option value="" selected="selected">---------</option>
+			<option value="N/A">N/A</option>
+			<option value="Anticipo">Anticipo</option>
+			<option value="Cumplimiento divisible">Cumplimiento divisible</option>
+			<option value="Cumplimiento indivisible">Cumplimiento indivisible</option>
+			<option value="Vicios ocultos">Vicios ocultos</option>
+			<option value="Defectos o Calidad/Poliza de responsbilidad civil/otra">Defectos o Calidad/Poliza de responsbilidad civil/otra</option>
+		</select>
+	</div>
+</div>
+<div class="col-md-4 text-center">
+	<div class="form-group">
+		<label class="control-label" for="id_porcentaje1">Porcentaje 1</label>
+		<input class="form-control" id="id_porcentaje1" maxlength="400" name="porcentaje1" placeholder="Porcentaje 1" required="required" title="" type="text" />
+	</div>
+</div>
+<div class="col-md-4 text-center">
+	<div class="form-group">
+		<label class="control-label" for="id_porcentaje2">Porcentaje 2</label>
+		<input class="form-control" id="id_porcentaje2" maxlength="400" name="porcentaje2" placeholder="Porcentaje 2" required="required" title="" type="text" />
+	</div>
+</div>
+<div class="col-md-4">
+	<div class="form-group">
+		<label class="control-label" for="id_porcentaje3">Porcentaje 3</label>
+		<input class="form-control" id="id_porcentaje3" maxlength="400" name="porcentaje3" placeholder="Porcentaje 3" required="required" title="" type="text" />
+	</div>
+</div>
+<div class="col-md-6">
+	<div class="form-group">
+		<label class="control-label" for="id_plurianualidad">Plurianualidad</label>
+		<select class="form-control" id="id_plurianualidad" name="plurianualidad" required="required" title="">
+			<option value="" selected="selected">---------</option>
+			<option value="SI">SI</option>
+			<option value="NO">NO</option>
+		</select>
+	</div>
+</div>
+<div class="col-md-6">
+	<div class="form-group">
+		<label class="control-label" for="id_meses">Meses</label>
+		<input class="form-control" id="id_meses" maxlength="400" name="meses" placeholder="Meses" required="required" title="" type="text" />
+	</div>
+</div>
+<div class="col-md-3">
+	<div class="form-group">
+		<label class="control-label" for="id_penas_convencionales">Penas Convencionales</label>
+		<select class="form-control" id="id_penas_convencionales" name="penas_convencionales" required="required" title="">
+			<option value="" selected="selected">---------</option>
+			<option value="SI">SI</option>
+			<option value="NO">NO</option>
+		</select>
+	</div>
+</div>
+<div class="col-md-3">
+	<div class="form-group">
+		<label class="control-label" for="id_porcentaje_penas">Porcentaje de Penas</label>
+		<input class="form-control" id="id_porcentaje_penas" maxlength="400" name="porcentaje_penas" placeholder="Porcentaje de Penas" required="required" title="" type="text" />
+	</div>
+</div>
+<div class="col-md-3">
+	<div class="form-group">
+		<label class="control-label" for="id_tiempo_fabricacion">Tiempo de Fabricacion</label>
+		<select class="form-control" id="id_tiempo_fabricacion" name="tiempo_fabricacion" required="required" title="">
+			<option value="" selected="selected">---------</option>
+			<option value="N/A">N/A</option>
+		</select>
+	</div>
+</div>
+<div class="col-md-3">
+	<div class="form-group">
+		<label class="control-label" for="id_condiciones_entrega">Condiciones de Entrega</label>
+		<input class="form-control" id="id_condiciones_entrega" maxlength="400" name="condiciones_entrega" placeholder="Condiciones de Entrega" required="required" title="" type="text" />
+	</div>
+</div>
+<div class="col-md-6">
+	<div class="form-group">
+		<label class="control-label" for="id_solicita">Anotar nombre, cargo y firma del titular del araea solicitante</label>
+		<textarea class="form-control" cols="40" id="id_solicita" maxlength="400" name="solicita" placeholder="Anotar nombre, cargo y firma del titular del araea solicitante" required="required" rows="10" title=""></textarea>
+	</div>
+</div>
+<div class="col-md-6">
+	<div class="form-group">
+		<label class="control-label" for="id_autoriza">Anotar nombre, cargo y firma del titular del servicor publico que autoriza</label>
+		<textarea class="form-control" cols="40" id="id_autoriza" maxlength="400" name="autoriza" placeholder="Anotar nombre, cargo y firma del titular del servicor publico que autoriza" required="required" rows="10" title=""></textarea>
+	</div>
+</div>
+<div class="col-md-6">
 	<button class="btn btn-success my-2 my-sm-0 fa fa-floppy-o" type="submit"> Guardar</button>
+</div>
 </form>
 <p>
 {% buttons %}
+<div class="col-md-4 text-rigth">
 	<a href="{% url "focon:f03list"  %}"><button class="btn btn-danger my-2 my-sm-0 fa fa-arrow-left" type="submit"> Regresar</button></a>
+</div>
+
 {% endbuttons %}
 </p>
 {% endblock %}
