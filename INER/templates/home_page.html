@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block head_title %}Contabilidad{% endblock %}
+{% block content %}
+{% load bootstrap3 %}
+{% load static %}
+<div class="content">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1>Bienvenidos</h1>
+      <h2>Departamento de Mantenimiento, Conservación y Construcción</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Misión</h1>
+      <h4>Resolver con rapidez y eficiencia las problemáticas que surjan
+        dentro del Departamento de Mantenimiento, Conservación y Construcción estando en busca siempre de la mejora continua </h4>
+    </div>
+    <div class="col-md-6">
+      <h1>Visión</h1>
+      <h4>El Departamento de Mantenimiento, Conservación y Construcción deberá ser una entidad que conjunte recursos humanos,
+        técnicos y financieros para darle al Instituto una imagen moderna y eficiente en el funcionamiento de sus instalaciones. </h4>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <img src="{% static 'img/INER.jpg' %}" height="300px" width="300px" alt="logo" class="avatar">
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
