@@ -17,6 +17,7 @@ from django.conf.urls import url, include
 from django.conf import settings
 from django.contrib import admin
 from django.conf.urls.static import static
+from .views import home_page
 # from .views import GeneratePDF
 # from apps.focon import views as anidadosviews
 # admin.autodiscover()
@@ -24,6 +25,7 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
+    url(r'^INER/', home_page,name='home'),
     url(r'^admin/', admin.site.urls),
     url(r'^cucop/', include('apps.contabilidad.urls', namespace="conta")),
     url(r'^focones/', include('apps.focon.urls', namespace="focon")),

@@ -9,27 +9,27 @@
 <body>
 <p>
     {% blocktrans with site_name=site.name %}
-    You (or someone pretending to be you) have asked to register an account at
-    {{ site_name }}.  If this wasn't you, please ignore this email
-    and your address will be removed from our records.
+    Usted (o alguien que pretende ser usted) ha solicitado registrar una cuenta
+    en www.dmcc-iner.com. Si no fue usted, ignore este correo electrónico y su dirección
+    será eliminada de nuestros registros.
     {% endblocktrans %}
 </p>
 <p>
     {% blocktrans %}
-    To activate this account, please click the following link within the next
-    {{ expiration_days }} days:
+    Para activar esta cuenta, haga clic en el siguiente enlace dentro de los próximos
+    {{ expiration_days }} días:
     {% endblocktrans %}
 </p>
 
 <p>
-    <a href="http://localhost:8000{% url 'registration_activate' activation_key %}">
-        localhost:8000/{% url 'registration_activate' activation_key %}
-    </a>
+  <a href="http://www.dmcc-iner.com/{% url 'registration_activate' activation_key %}">
+        www.dmcc-iner.com/{% url 'registration_activate' activation_key %}
+  </a>
 </p>
 <p>
     {% blocktrans with site_name=site.name %}
-    Sincerely,
-    {{ site_name }} Management
+    Atentamente,
+    Administrador del sitio www.dmcc-iner.com
     {% endblocktrans %}
 </p>
 </body>
