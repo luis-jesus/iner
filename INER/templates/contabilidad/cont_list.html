@@ -5,8 +5,10 @@
 {% load static %}
 <center><h1>CUCOP</h1></center>
 <div class="row">
+  {% if request.user.is_superuser %}
   <a href="{% url "conta:new" %}"><button class="btn btn-primary my-2 my-sm- fa fa-plus fa-1x" type="submit"> Agregar</button></a>
   <p><a href="{% url 'conta:reporteexcel' %}"><button class="btn btn-success my-2 my-sm-0 fa fa-file-excel-o fa-1x" type="submit"> Reporte</button></a></p>
+  {% endif %}
   <table class="table table-hover order-table table table-bordered" style="text-align:center;">
     <thead>
       <tr class="encabezados">
@@ -14,7 +16,9 @@
         <th><h6>Partida</h6></th>
         <th><h6>Descripción</h6></th>
         <th><h6>Unidad de Medida</h6></th>
+        {% if request.user.is_superuser %}
         <th><h6>Acciones</h6></th>
+        {% endif %}
       </tr>
     </thead>
     {% for cont in object_list %}
@@ -23,6 +27,7 @@
       <td>{{ cont.partida }}</td>
       <td>{{ cont.descripcion }}</td>
       <td>{{ cont.unidad_medida }}</td>
+      {% if request.user.is_superuser %}
       <td>
         <a href="{% url "conta:detail" cont.id %}"><i class="fa fa-eye fa-2x" aria-hidden="true"></i></a>
         <br>
@@ -30,6 +35,7 @@
         <br>
         <a href="{% url "conta:delete" cont.id %}"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></a>
       </td>
+      {% endif %}
     </tr>
     {% endfor %}
   </table>

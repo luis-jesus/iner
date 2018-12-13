@@ -25,7 +25,7 @@ from .views import home_page
 
 
 urlpatterns = [
-    url(r'^INER/', home_page,name='home'),
+    url(r'^D.M.C.C-INER/', home_page,name='home'),
     url(r'^admin/', admin.site.urls),
     url(r'^cucop/', include('apps.contabilidad.urls', namespace="conta")),
     url(r'^focones/', include('apps.focon.urls', namespace="focon")),
