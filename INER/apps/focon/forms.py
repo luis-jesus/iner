@@ -153,7 +153,7 @@ class Focon03Form(forms.ModelForm):
 			'descripcion': forms.Textarea(attrs={'class':'form-control'}),
 			'descripcion_detallada' :forms.Textarea(attrs={'class':'form-control'}),
 			'cantidad_solicitada': forms.Select(attrs={'class':'form-control'}),
-			'unidad_medida': forms.Select(attrs={'class':'form-control'}),
+			'unidad_medida': forms.TextInput(attrs={'class':'form-control'}),
 			'precio_unitario': forms.TextInput(attrs={'class':'form-control'}),
 			'importe': forms.TextInput(attrs={'class':'form-control'}),
 			'subtotal': forms.TextInput(attrs={'class':'form-control'}),
